@@ -3,6 +3,7 @@ package main
 import "net/http"
 
 func main() {
+	session, err := mgo.Dial("mongodb")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("Hello world"))
 	})
